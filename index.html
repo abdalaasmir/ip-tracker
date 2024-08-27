@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>IP Address Tracker</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body class="text-center">
+    <div class="search-bar p-5">
+      <img
+        src="images/pattern-bg-desktop.png "
+        class="position-absolute top-0 start-0 z-n1"
+        alt=""
+      />
+      <h1 class="title m-3">IP Address Tracker</h1>
+      <input
+        type="text"
+        placeholder="Search for any IP adderss"
+        class="s-bar"
+      />
+      <div class="after">></div>
+    </div>
+    <div class="search-result text-start row">
+      <div class="ip col me-4">
+        <nav class="opacity-50">Ip Address</nav>
+        <div class="ip-info info fs-3"></div>
+      </div>
+      <div class="location col me-4">
+        <nav class="opacity-50">Location</nav>
+        <div class="loc-info info fs-3"></div>
+      </div>
+
+      <div class="time-zone col me-4">
+        <nav class="opacity-50">Time zone</nav>
+        <div class="time-info info fs-3"></div>
+      </div>
+
+      <div class="Isp col me-4">
+        <nav class="opacity-50">Isp</nav>
+        <div class="isp-info info fs-3"></div>
+      </div>
+    </div>
+
+    <div class="position-absolute top-0 start-0" id="map">
+      <div class="map" id="map"></div>
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>
