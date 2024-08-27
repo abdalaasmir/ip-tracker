@@ -5,41 +5,44 @@ body {
 }
 
 img {
-  width: max-content;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-.search-result {
-  background-color: rgb(255, 255, 255);
-  color: black;
-  padding: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 70%;
-  border-radius: 10px;
+.search-bar {
+  position: relative;
+  z-index: 1;
+  /* Ensures it stays above the image */
+  text-align: center;
+  /* Center align the content */
+}
+
+.input-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
 }
 
 .s-bar {
   margin-right: 0px;
   padding: 10px;
-  padding-right: 200px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   outline: none;
-  outline-style: none;
   border-color: transparent;
+  width: 100%;
+  max-width: 500px;
 }
 
 .after {
-  display: inline;
+  display: inline-block;
   background-color: black;
   padding: 13.5px;
-  margin-left: auto;
-  margin-right: auto;
-  width: fit-content;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   text-align: center;
-  margin-left: -10px;
   font-weight: bold;
   cursor: pointer;
   transition: 0.2s;
@@ -50,18 +53,21 @@ img {
   color: black;
 }
 
-.info {
-  margin-top: 10px;
+.search-result {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  border-radius: 10px;
+  z-index: 2;
+  position: relative;
 }
 
 .col {
-  width: fit-content;
-}
-
-.seprator {
-  height: 200px;
-  width: 1px;
-  background-color: black;
+  width: 100%;
+  max-width: 300px;
 }
 
 #map {
@@ -71,33 +77,44 @@ img {
   bottom: 0;
   right: 0;
   z-index: -3;
+  /* Ensures the map stays behind all other content */
+  height: 100vh;
+  /* Full height of the viewport */
+  width: 100vw;
+  /* Full width of the viewport */
 }
 
 @media (max-width: 800px) {
-  .seprator {
-    display: none;
+  .input-group {
+    flex-direction: column;
   }
-}
 
-@media (max-width: 750px) {
-  .row {
-    display: block;
-  }
-  .col {
-    margin-top: 30px;
-    width: auto;
-    text-align: center;
-  }
-  .seprator {
-    display: none;
-  }
   .s-bar {
-    padding-right: 120px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  .after {
+    border-radius: 10px;
+    width: 100%;
+  }
+
+  .col {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .search-result {
+    width: 90%;
   }
 }
 
 @media (max-width: 500px) {
   .s-bar {
     padding-right: 80px;
+  }
+
+  .after {
+    padding: 10px;
   }
 }
